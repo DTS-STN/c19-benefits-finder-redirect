@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'MTSContainers'
-        repository: 'next-template'
+        repository: 'c19-benefits-finder-redirect'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: 'azure-$(Build.BuildId)-dev'

@@ -1,19 +1,19 @@
 # Click to view the test reports for Main 👩‍🔬🧪
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/next-template/E2E%20Test?label=E2E)](https://dts-stn.github.io/next-template/main/coverage/e2e-report)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/next-template/Lint%20and%20Test?label=Lint%20and%20Unit)](https://dts-stn.github.io/next-template/main/coverage/lcov-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/c19-benefits-finder-redirect/E2E%20Test?label=E2E)](https://dts-stn.github.io/c19-benefits-finder-redirect/main/coverage/e2e-report)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DTS-STN/c19-benefits-finder-redirect/Lint%20and%20Test?label=Lint%20and%20Unit)](https://dts-stn.github.io/c19-benefits-finder-redirect/main/coverage/lcov-report)
 
-![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fnext-template%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fnext-template%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20Coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fnext-template%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
-![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20Coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fnext-template%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Line Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Line%20Coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fc19-benefits-finder-redirect%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Statements Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Statement%20Coverage&query=%24.total.statements.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fc19-benefits-finder-redirect%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Function Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Function%20Coverage&query=%24.total.functions.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fc19-benefits-finder-redirect%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
+![Branch Coverage Badge](https://img.shields.io/badge/dynamic/json?label=Branch%20Coverage&query=%24.total.branches.pct&suffix=%25&url=https%3A%2F%2Fdts-stn.github.io%2Fc19-benefits-finder-redirect%2Frefs%2Fheads%2Fmain%2Fcoverage%2Fcoverage-summary.json)
 
 ## Versions
 
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/next-template/next)
-![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/next-template/dev/tailwindcss)
-![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/next-template/dev/jest)
-![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/next-template/dev/cypress)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/c19-benefits-finder-redirect/next)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/c19-benefits-finder-redirect/dev/tailwindcss)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/c19-benefits-finder-redirect/dev/jest)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/DTS-STN/c19-benefits-finder-redirect/dev/cypress)
 
 ## Description
 
@@ -33,9 +33,9 @@ This project uses
 
 ### Values that need to be configured:
 
-#### Replace next-template name to new project name
+#### Replace c19-benefits-finder-redirect name to new project name
 
-Search "next-template", replace in package.json, run "npm i" in terminal and confirm package-lock.json is updated
+Search "c19-benefits-finder-redirect", replace in package.json, run "npm i" in terminal and confirm package-lock.json is updated
 
 #### Update the Licence
 
@@ -53,7 +53,7 @@ Once approved by the DG, the copyright statement must still be included in the L
 
 #### Configuring Helm
 
-In the helm template, the application name is next-template. this will need to be changed by the current application name.
+In the helm template, the application name is c19-benefits-finder-redirect. this will need to be changed by the current application name.
 
 For every Kubernetes cluster, a context.sh file needs to be defined. For example, one might be called context-dev.sh and the other context-prod.sh.
 
