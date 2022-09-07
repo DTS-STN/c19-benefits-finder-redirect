@@ -1,0 +1,16 @@
+---
+
+services:
+  redirect:
+    container_name: redirect
+    image: redirect:latest
+    build: 
+      context: .
+      args:
+        LISTEN_PORT: 80
+        SERVER_NAME_EN: covid-benefits.alpha.canada.ca
+        SERVER_NAME_FR: covid-prestations.alpha.canada.ca
+        REDIRECT_NAME_EN: https://www.canada.ca/en/services/benefits/finder.html
+        REDIRECT_NAME_FR: https://www.canada.ca/fr/services/prestations/chercheur.html
+    ports:
+      - "8080:80"

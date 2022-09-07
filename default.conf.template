@@ -1,0 +1,15 @@
+server {
+     listen ${LISTEN_PORT};
+     listen [::]:${LISTEN_PORT};
+     server_name ${SERVER_NAME_EN} www.${SERVER_NAME_EN};
+
+     rewrite ^/(.*)$ ${REDIRECT_NAME_EN}$1 permanent;
+}
+
+server {
+     listen ${LISTEN_PORT};
+     listen [::]:${LISTEN_PORT};
+     server_name ${SERVER_NAME_FR} www.${SERVER_NAME_FR};
+
+     rewrite ^/(.*)$ ${REDIRECT_NAME_FR}$1 permanent;
+}

@@ -5,35 +5,32 @@ on:
 
 jobs:
   unit:
-    name: Jest Unit Test
+    name: Nginx Config File Test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
     steps:
-      - name: Checkout 🔔
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Docker Build
+        uses: docker/build-push-action@v2
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install
-        run: npm install
+          context: ./
+          file: ./Dockerfile
+          push: false
+          tags: c19-benefits-finder-redirect
+          build-args: |
+            LISTEN_PORT: ${{ secrets.LISTEN_PORT }}
+            SERVER_NAME_EN: ${{ secrets.SERVER_NAME_EN }}
+            SERVER_NAME_FR: ${{ secrets.SERVER_NAME_FR }}
+            REDIRECT_NAME_EN: ${{ secrets.REDIRECT_NAME_EN }}
+            REDIRECT_NAME_FR: ${{ secrets.REDIRECT_NAME_FR }}
         env:
           CI: true
 
-      - name: Unit Tests 🧪
-        run: npm run test:coverage -- -u
+      - name: Docker run
+        run: docker run -d -p 8080:80 c19-benefits-finder-redirect
         env:
           CI: true
-
-      - name: Deploy Coverage Report 🚀
-        #dependabot doesn't get write access
-        if: ${{ github.actor != 'dependabot[bot]' }}
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          target-folder: ${{ github.ref }}/coverage
-          folder: coverage
+      
+      - name: Test nginx config files
+        run: docker exec c19-benefits-finder-redirect nginx -t
+        env:
+          CI: true
