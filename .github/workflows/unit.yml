@@ -34,6 +34,6 @@ jobs:
           CI: true
       
       - name: Test nginx config files
-        run: docker exec c19-benefits-finder-redirect nginx -t
+        run: docker run c19-benefits-finder-redirect nginx -t
         env:
           CI: true
