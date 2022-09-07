@@ -7,8 +7,11 @@ jobs:
   unit:
     name: Nginx Config File Test
     runs-on: ubuntu-latest
-    
+
     steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
       - name: Docker Build
         uses: docker/build-push-action@v2
         with:
