@@ -14,18 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Docker Build
-        uses: docker/build-push-action@v2
-        with:
-          context: ./
-          file: ./Dockerfile
-          push: false
-          tags: c19-benefits-finder-redirect
-          build-args: |
-            LISTEN_PORT: ${{ secrets.LISTEN_PORT }}
-            SERVER_NAME_EN: ${{ secrets.SERVER_NAME_EN }}
-            SERVER_NAME_FR: ${{ secrets.SERVER_NAME_FR }}
-            REDIRECT_NAME_EN: ${{ secrets.REDIRECT_NAME_EN }}
-            REDIRECT_NAME_FR: ${{ secrets.REDIRECT_NAME_FR }}
+        run: docker build --build-arg LISTEN_PORT=${{ secrets.LISTEN_PORT }} --build-arg SERVER_NAME_EN=${{ secrets.SERVER_NAME_EN }} --build-arg SERVER_NAME_FR=${{ secrets.SERVER_NAME_FR }} --build-arg  REDIRECT_NAME_EN=${{ secrets.REDIRECT_NAME_EN }} --build-arg REDIRECT_NAME_FR=${{ secrets.REDIRECT_NAME_FR }} -t c19-benefits-finder-redirect .
         env:
           CI: true
 

@@ -22,16 +22,6 @@ jobs:
         env:
           CI: true
       
-      - name: check which containers are running
-        run: docker ps -a 
-        env:
-          CI: true
-          
-      - name: check docker logs
-        run: docker logs redirect 
-        env:
-          CI: true
-      
       - name: Test nginx config files
         run: docker exec redirect nginx -t 
         env:
