@@ -29,11 +29,11 @@ jobs:
           CI: true
 
       - name: Docker run
-        run: docker run -d -p 8080:80 c19-benefits-finder-redirect
+        run: docker run -d -p 8080:80 --name redirect c19-benefits-finder-redirect
         env:
           CI: true
       
       - name: Test nginx config files
-        run: docker run c19-benefits-finder-redirect nginx -t
+        run: docker exec redirect nginx -t 
         env:
           CI: true
